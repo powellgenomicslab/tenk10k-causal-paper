@@ -1,4 +1,6 @@
-TenK10K Phase1 causal inference manuscript
+# TenK10K Phase1 causal inference manuscript
+
+![](figures/biorender/study_design.png)
 
 ## Overview
 
