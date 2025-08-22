@@ -1,4 +1,5 @@
 TenK10K Phase1 causal inference manuscript
+![Version](https://img.shields.io/badge/version-preprint)
 
 ## Overview
 
@@ -31,12 +32,12 @@ This repository contains code, data, and workflows for the TenK10K causal infere
 
 1. Clone the repository:
    ```sh
-   git clone <repo-url>
+   git clone https://github.com/powellgenomicslab/tenk10k-causal-paper.git
    cd tenk10k-causal-paper
    ```
 
-2. Run the Snakemake workflow in workflow/ to generate analysis outputs.
+2. Run the Snakemake workflow in `workflow/` to generate analysis outputs.
 
-3. Use the scripts in scripts/ to produce figures and tables for the manuscript.
+3. Use the scripts in `scripts/` to produce figures and tables for the manuscript.
 
 4. See individual README.md files in each subdirectory for step-specific instructions.
