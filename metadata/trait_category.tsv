@@ -1,0 +1,11 @@
+cat_order	supercategory	color
+Blood	biological	#E76254FF
+Skeletal	biological	#EF8A47FF
+Immune	disease	#F7AA58FF
+Cancer	disease	#FFD06FFF
+Viral infection	disease	#FFE6B7FF
+Cardiometabolic	disease	#AADCE0FF
+Respiratory	disease	#72BCD5FF
+Neurologic	disease	#528FADFF
+Psychiatric	disease	#376795FF
+Other	disease	#1E466EFF
