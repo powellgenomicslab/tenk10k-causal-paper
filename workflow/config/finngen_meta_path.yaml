@@ -1,0 +1,6 @@
+# Path for GWAS sumstats from FinnGen meta-analysis
+
+base_dir: "resources/download/gwas/finngenr12_ukb_mvp_meta"
+pheno_prefix:
+  pancreatic: "C3_PANCREAS_EXALLC"
+  cmelanoma: "C3_SKIN_EXALLC"

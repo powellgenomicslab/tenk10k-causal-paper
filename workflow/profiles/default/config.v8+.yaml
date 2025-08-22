@@ -1,0 +1,43 @@
+# Settings to run
+use-singularity: True
+use-conda: True
+executor: cluster-generic
+cluster-generic-submit-cmd:
+  qsub
+    -N job
+    -V 
+    -P {resources.project}
+    -o job_logs/
+    -e job_logs/
+    -l mem={resources.mem}
+    -l walltime={resources.time}
+    -l ncpus={resources.ncpus}
+    -l wd
+    -l storage={resources.storage}
+    -q {resources.queue}
+    -m ae
+    -M {resources.email}
+    {resources.opt}
+cluster-generic-cancel-cmd: qdel {rule}-{wildcards}
+# cluster-generic-status-cmd: qstat -j {rule}-{wildcards}
+default-resources:
+  time: 10:00:00
+  ncpus: 4
+  mem: 8GB
+  queue: normal
+  email: a.henry@garvan.org.au
+  storage: gdata/ei56+gdata/fy54+scratch/ei56+scratch/fy54
+  project: fy54
+  opt: ''
+jobs: 500
+local-cores: 4
+latency-wait: 10
+keep-going: True
+rerun-incomplete: True
+rerun-triggers: mtime
+printshellcmds: True
+use-envmodules: True
+# restart-times: 0
+# max-jobs-per-second: 10
+# max-status-checks-per-second: 1
+# scheduler: greedy

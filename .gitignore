@@ -1,0 +1,63 @@
+# Ignore Python cache and temp files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.tmp
+*.temp
+*.log
+*.out
+*.bak
+
+# Ignore R temp and log files
+*.Rhistory
+*.RData
+*.Rproj.user/
+*.Rout
+*.Rout.save
+*.Rapp.history
+*.Rcheck/
+
+# Ignore Snakemake temp and log files
+.snakemake/
+*.snakemake.log
+*.snakemake.tmp
+*.snakemake.out
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore results and intermediate files
+results/
+logs/
+*.gz
+*.parquet
+*.tsv
+*.csv
+*.xlsx
+*.h5
+*.h5ad
+*.bed
+*.bim
+*.fam
+*.chain
+*.done
+*.touch
+*.zip
+*.tar
+*.tar.gz
+*.egg-info/
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore cloud sync files
+*.gdoc
+*.gsheet
+*.gdrawing
+*.gslides

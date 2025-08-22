@@ -1,0 +1,35 @@
+"""
+Main Snakemake workflow for tenk10k-causal-paper project.
+
+This workflow orchestrates GWAS, gene annotation, enrichment, scDRS, OTP, and correlation analyses using modular rule files.
+
+Included rule files:
+	- init.smk: Initialization and gene annotation
+	- otp.smk: Open Targets Platform drug/disease association processing
+	- smr.smk: Summary-based Mendelian Randomization analysis
+	- magma.smk: MAGMA gene-level association and aggregation
+	- enrichment.smk: Gene set enrichment analysis
+	- format_gwas.smk: GWAS summary statistics formatting
+	- scdrs.smk: Single-cell disease relevance score analysis
+	- gen_cor.smk: Genetic correlation analysis
+
+Main dependencies:
+	- Python (pandas, yaml, pathlib)
+	- R (data.table, dplyr, stringr, etc.)
+	- MAGMA, LDAK, scDRS, Enrichr, gget
+
+Inputs, outputs, and parameters are defined in each rule file. See individual rule files for details.
+"""
+
+from pathlib import Path
+import yaml
+import pandas as pd
+include: "rules/init.smk"
+include: "rules/otp.smk"
+include: "rules/smr.smk"
+include: "rules/magma.smk"
+include: "rules/enrichment.smk"
+include: "rules/format_gwas.smk"
+include: "rules/scdrs.smk"
+include: "rules/gen_cor.smk"
+
