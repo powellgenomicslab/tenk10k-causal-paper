@@ -15,6 +15,9 @@ This repository contains code, data, and workflows for the TenK10K causal infere
 - `figures/`  
   Contains figures generated for the manuscript.
 
+- `metadata/`  
+  Contains metadata for traits, trait categories, and cell types from TenK10K phase 1 sc-eQTL analysis.
+
 - `scripts/`  
   Main analysis scripts, organized by section:
   - `0-preprocess/`  
