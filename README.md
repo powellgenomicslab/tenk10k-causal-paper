@@ -1,6 +1,6 @@
 # TenK10K Phase1 causal inference manuscript
 
-![Version](https://img.shields.io/badge/version-preprint)
+![Static Badge](https://img.shields.io/badge/version-preprint-red)
 
 
 ## Study design
