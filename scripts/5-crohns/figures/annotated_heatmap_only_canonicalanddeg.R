@@ -1,5 +1,3 @@
-# Author: Rika Tyebally
-
 library(tidyverse)
 library(patchwork)
 

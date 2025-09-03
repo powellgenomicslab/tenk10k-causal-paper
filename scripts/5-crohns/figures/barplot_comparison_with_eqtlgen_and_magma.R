@@ -1,12 +1,8 @@
-
-
 library(ggplot2)
 library(tidyverse)
 library(patchwork)
 
 mr <- readRDS("resources/crohns_case_study/postprocess/tenk_crohns_sig.RDS")
-
-
 eqtlgen <- readRDS("resources/crohns_case_study/crohns_relevant_gene_lists/eqtlgen_crohns_sig_genes.RDS")
 cell_map <- read_tsv("resources/metadata/cell_map.tsv")
 colours <- cell_map %>% select(cell_type, color) %>% deframe()

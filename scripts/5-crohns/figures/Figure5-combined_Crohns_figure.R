@@ -10,7 +10,6 @@ new_annot <- data.table(
 )
 load("resources/crohns_case_study/heatmap_objects.RData")
 
-# plot_data <- readRDS("resources/crohns_case_study/plot_data.RDS")
 canon_pathway_deg_genes <- c("ENSG00000100365", "ENSG00000245532", "ENSG00000206503",
                              "ENSG00000188906", "ENSG00000115232", "ENSG00000096968")
 
@@ -21,36 +20,8 @@ plot_data[probeID %in% canon_pathway_deg_genes, Gene := paste0(mark, Gene)]
 
 plot_data[, annot := factor(annot, levels = c(new_annot$new))]
 
-# plot_data[, .(n_gene = n_distinct(Gene)), by = annot]
-
 source("scripts/preprocess.R")
-source("scripts/crohns_publication/locus_zoom.R")
-
-# max_ptransform <- df_msmr[phenotype == "crohns", max(-log10(p_SMR_multi))]
-
-# df_crohns_summary <- df_msmr %>% 
-#   filter(phenotype == "crohns") %>% 
-#   group_by(probeID) %>% 
-#   summarise(n_celltypes = n_distinct(cell_type),
-#             celltypes = list(cell_type))
-
-# get celltypes with n_celltype == 1
-# df_celltype_specific <- df_msmr %>% 
-#   filter(phenotype == "crohns") %>% 
-#   group_by(probeID) %>% 
-#   filter(n() == 1) %>% 
-#   group_by(cell_type) %>% 
-#   tally(name = "n_specific_mr_genes")
-# 
-# df_celltype_genes <- df_msmr %>% 
-#   filter(phenotype == "crohns") %>%
-#   group_by(cell_type) %>% 
-#   tally(name = "n_mr_genes")
-# 
-# df_celltype_summary <- df_celltype_genes %>% 
-#   left_join(df_celltype_specific, by = "cell_type") %>% 
-#   mutate(n_specific_mr_genes = replace_na(n_specific_mr_genes, 0),
-#            prop = n_specific_mr_genes / n_mr_genes)
+source("scripts/5-crohns/figures/Crohns_example_locus_zoom.R")
 
 max_ptransform <- max(abs(plot_data$p_transform), na.rm = TRUE)
 
@@ -133,43 +104,9 @@ panel_ab <- (wrap_elements(full = p_heatmap) | wrap_elements(full = mr_example_p
         plot.tag.position = c(0, 1))
 )
 
-# ggsave("figures/crohns/p_heatmap_annot_helvetica.png", p_heatmap, device = ragg::agg_png(),
-#        width = 5.0, height = 15, bg = "white", scaling = 1.5, dpi = 300)
-
-
 ggsave("figures/crohns/crohns_combined_v2.png", plots, device = ragg::agg_png(),
        width = 9, height = 12.5, bg = "white", scaling = 1, dpi = 300)
 
 ggsave("figures/publication_pdf/Fig5 - Crohn's disease.pdf", plots, device = cairo_pdf,
        width = 9, height = 12.5, bg = "white", scale = 1, dpi = 320)
  
-# (p_n_celltype <- plot_data[, .(n = sum(sig, na.rm = TRUE)), by = list(fct_gene, annot)] %>% 
-#   ggplot(aes(y = fct_gene, x = n)) +
-#   geom_col(aes(fill = n), width = 0.5, show.legend = FALSE) +
-#   # geom_tile(aes(fill = n), color = "white") +
-#   # scale_fill_viridis_c(direction = -1, na.value = "grey90") +
-#   scale_fill_stepsn(colours = paletteer_d("MexBrewer::Frida")) +
-#   facet_grid(rows = vars(annot), scales = "free", space = "free") +
-#   # geom_text(aes(label = n), size = 2.5, color = "black") +
-#   theme_classic() +
-#   labs(x = "Number of cell types\nwith MR evidence", y = NULL) +
-#   layer_scales(p_heatmap)$y +
-#   scale_x_continuous(
-#     breaks = c(1,5,10,15,20),
-#     expand = expansion(mult = c(0, 0.05))) +
-#   theme(strip.text.y = element_text(angle = -90),
-#         strip.background = element_blank(),
-#         axis.line.y = element_blank(),
-#         axis.ticks.y = element_blank(),
-#         axis.text.y = element_blank(),
-#         plot.margin = margin()
-#         )
-# )
-
-# (p_heatmap + p_n_celltype + 
-#   plot_layout(nrow = 1, widths = c(5, 1))
-# )
-# 
-# ggsave("causal_inference_manuscript/figs/main_corrected/heat_facet_annot_2_categories_Roboto.png", FIG1, device = ragg::agg_png(),
-#        width = 5.0, height = 16, bg = "white", scaling = 1.2, dpi = 300)
-

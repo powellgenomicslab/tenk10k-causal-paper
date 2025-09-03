@@ -2,7 +2,7 @@ library(data.table)
 library(tidyverse)
 
 source("scripts/util/helper.R")
-df_msmsr <- readRDS("resources/crohns_case_study/postprocess/tenk_alltraits_sig.RDS")
+df_msmsr <- readRDS("resources/crohns_case_study/postprocess/tenk_alltraits_sig.RDS") %>% ungroup()
 
 crohns_genes <- df_msmr %>% 
   filter(phenotype == "crohns") %>% 
@@ -51,6 +51,8 @@ write_gs(tbl_crohns_immune, "crohns_immune")
 #   theme(legend.position = "bottom")
 
 ############################################################################################################################################################################################################
+
+# Not in publication but for referece. 
 
 library(tidyverse)
 tenk_all <- readRDS("resources/crohns_case_study/postprocess/tenk_alltraits_sig.RDS")
