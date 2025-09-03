@@ -22,21 +22,6 @@ This Snakemake workflow processes and analyzes data for the Tenk10k causal infer
   - PLINK
   - CrossMap
 
-## Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/tenk10k-workflow.git
-   cd tenk10k-workflow
-   ```
-2. Install dependencies:
-   - Using Conda:
-     ```bash
-     conda env create -f environment.yaml
-     conda activate tenk10k
-     ```
-   - Or install Python and R packages manually.
-3. Configure paths in `config/finngen_meta_path.yaml`.
-
 ## Usage
 Run the workflow:
 ```bash
@@ -91,8 +76,3 @@ snakemake --profile profiles/default --cores 8
 - **Scripts:** `rules/snakescripts/scdrs/*`
 - **Purpose:** Prepare covariates, regress out confounders, compute scDRS scores.
 - **Output:** `resources/scdrs/`, `results/scdrs/`
-
-### 7. Genetic Correlation
-- **Scripts:** `rules/snakescripts/ldak/*`
-- **Purpose:** Calculate genetic correlations between traits using LDAK.
-- **Output:** `results/gen_cor/`

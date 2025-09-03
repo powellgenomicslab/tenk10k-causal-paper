@@ -1,5 +1,3 @@
-...existing code...
-
 rule ldak_calc_tag_file:
     """
     Calculate LDAK tag files for each chromosome.
@@ -128,42 +126,3 @@ rule gencor_eigen:
     conda: "renv"
     log: "logs/gen_cor/{study}.eigen.log"
     script: "snakescripts/aggregate/gen_cor_eigen.R"
-
-# rule ldak_gen_cor_all:
-#     input: ldak_gen_cor_all
-#     output: touch("results/.done/gen_cor.{study}.done")
-#     shell: "mkdir -p $(dirname {output}) && touch {output}"
-
-# rule ldsc_munge_sumstats:
-#     input:
-#         script = "softwares/ldsc/munge_sumstats.py"
-#     output:
-#         "results/gen_cor/{trait}_munge_sumstats.txt"
-#     params:
-#         trait="{trait}"
-#     log:
-#         "logs/gen_cor/{trait}.log"
-#     shell:
-#         """
-#         echo "Running munge sumstats for {params.trait}" > {log}
-#         # Simulate the command for munge sumstats
-#         echo "Munged sumstats for {params.trait}" > {output}
-#         echo "Munge completed for {params.trait}" >> {log}
-#         """
-
-# rule ldsc_rho:
-#     input:
-#         script = "softwares/ldsc/ldsc.py"
-#     output:
-#         "results/gen_cor/{trait}_gen_cor.txt"
-#     params:
-#         trait="{trait}"
-#     log:
-#         "logs/gen_cor/{trait}.log"
-#     shell:
-#         """
-#         echo "Running genetic correlation analysis for {params.trait}" > {log}
-#         # Simulate the command for genetic correlation analysis
-#         echo "Genetic correlation results for {params.trait}" > {output}
-#         echo "Analysis completed for {params.trait}" >> {log}
-#         """

@@ -11,7 +11,7 @@ Included rule files:
 	- enrichment.smk: Gene set enrichment analysis
 	- format_gwas.smk: GWAS summary statistics formatting
 	- scdrs.smk: Single-cell disease relevance score analysis
-	- gen_cor.smk: Genetic correlation analysis
+	- gen_cor.smk: Genetic correlation analysis (not curently used)
 
 Main dependencies:
 	- Python (pandas, yaml, pathlib)
