@@ -1,4 +1,3 @@
-
 # locus zoom crohns
 # library(rtracklayer)
 library(tidyverse)
@@ -248,41 +247,3 @@ df_targets <- readxl::read_xlsx("resources/misc/crohns_example_gene.xlsx") %>%
         axis.title = element_text(size = 9)
         # plot.margin = margin()
         ))
-# 
-# ggsave("figures/smr_locus/crohns_example_locus_v4.png", plots,
-#        device = agg_png, scaling = 1.2, height = 10, width = 8)
-
-
-# add fig 1 
-
-
-
-
-
-# Save the plots
-# for (i in seq_along(df_targets$plots)) {
-#   x <- df_targets[i,]
-#   outfile <- glue::glue("figures/smr_locus/{x$pheno}_{x$biosample}_{x$gene_name}.overlapping_vars.locus.png")
-#   ggsave(outfile, x$plots, device = agg_png,
-#           width = 8, height = 8, res = 300, scaling = 1.2)
-# }
-# 
-# p_combined <- wrap_plots(
-#   list(df_targets$plots[[2]] & theme(legend.position = "none"),
-#        df_targets$plots[[1]] + theme(plot.margin = margin(l = 0.5, unit = "lines"))),
-#   nrow = 1, guide = "keep"
-# )
-# 
-# x <- list(pheno = "crohns", biosample = "combined")
-# ggsave(glue::glue("figures/smr_locus/{x$pheno}_{x$biosample}.overlapping_vars.locus.png"),
-#        p_combined, device = agg_png,
-#        width = 12, height = 6, res = 300, scaling = 1.2)
-# 
-# 
-# locus_plot <- ((p_gwas / p_eqtl) &
-#   theme(plot.margin = margin(),
-#         panel.border = element_rect(linewidth = 0.3),
-#         axis.ticks.y = element_line(),
-#         axis.ticks.length.y = unit(0.25, "lines"))) +
-#   plot_layout(ncol = 1, guides = "collect")
-# 
