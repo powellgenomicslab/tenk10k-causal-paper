@@ -1,0 +1,36 @@
+# Python dependencies for TenK10K causal inference analysis
+# Install with: pip install -r requirements.txt
+
+# Core scientific computing
+pandas>=1.5.0
+numpy>=1.21.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Single-cell analysis
+scanpy>=1.8.0
+
+# Machine learning / Deep learning
+torch>=1.10.0
+
+# Workflow and utilities
+snakemake>=7.0.0
+pyyaml>=6.0.0
+pathlib-utils>=0.1.0
+
+# Bioinformatics tools
+scdrs>=1.0.0
+gget>=0.4.0
+
+# Development and testing (optional)
+jupyter>=1.0.0
+notebook>=6.0.0
+pytest>=7.0.0
+
+# Data handling
+h5py>=3.0.0
+pyarrow>=8.0.0  # For parquet files
