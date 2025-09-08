@@ -5,6 +5,9 @@
 > [!NOTE]
 > This repository is still under active development and will be updated from time to time
 
+> [!TIP]
+> **New to this repository?** Start with our [Quick Start Guide](QUICKSTART.md) for a 5-minute setup!
+
 ## Study design
 ![](figures/biorender/study_design.png)
 

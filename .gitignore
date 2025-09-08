@@ -55,9 +55,39 @@ logs/
 # Ignore virtual environments
 venv/
 .env/
+env/
+conda-env/
 
 # Ignore cloud sync files
 *.gdoc
 *.gsheet
 *.gdrawing
 *.gslides
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore conda/pip build artifacts
+build/
+dist/
+*.egg-info/
+
+# Ignore data files that should not be committed
+data/
+raw_data/
+*.bak
+*.backup
+
+# Ignore large files and databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore temporary analysis outputs
+tmp/
+temp/
+scratch/
