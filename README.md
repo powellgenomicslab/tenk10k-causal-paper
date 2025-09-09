@@ -82,7 +82,16 @@ Summary statistics for single-cell eQTL and MR results will be deposited on Zeno
 
 ## Citation
 
-If you use this code or data in your research, please see [`CITATION.md`](CITATION.md) for citation information.
+If you use this code or data in your research, please consider citing
+
+**Preprint**:
+
+Henry, A., Senabouth, A., et al. Single-cell genetics identifies cell type-specific causal mechanisms in complex traits and diseases. medRxiv 2025.08.28.25334614 (2025) doi:10.1101/2025.08.28.25334614
+
+[medRxiv link](https://www.medrxiv.org/content/10.1101/2025.08.28.25334614v1)
+
+See [`CITATION.md`](CITATION.md) for citations on specific methods / datasets used in this study.
+
 
 ## Acknowledgments
 
