@@ -1,10 +1,6 @@
 # 2-mr: Mendelian Randomization Analysis
 
-This directory contains scripts for Mendelian Randomization (MR) analyses and visualization of results comparing TenK10K single-cell eQTL data with bulk eQTL data.
-
-## Overview
-
-This section performs comprehensive Mendelian Randomization analyses to identify causal relationships between gene expression and complex traits. The analysis compares results from TenK10K single-cell eQTL data with eQTLGen bulk tissue results to understand cell-type-specific causal effects.
+This directory contains scripts for Mendelian Randomization (MR) analyses and visualization of results
 
 ## Contents
 
@@ -28,7 +24,6 @@ library(patchwork)      # Combining multiple plots
 library(ragg)           # High-quality graphics device
 library(scales)         # Scale functions for visualization
 library(paletteer)      # Color palettes
-library(ggnewscale)     # Multiple color scales in ggplot2
 library(geomtextpath)   # Text along paths in plots
 # Plus all dependencies from 0-preprocess/preprocess_results.R
 ```
@@ -40,50 +35,6 @@ Both scripts source `scripts/0-preprocess/preprocess_results.R`, which provides:
 - Cell type and trait mappings
 - Gene annotations and categories
 
-## Key Analyses
-
-### Main Results (`mr_results_main.R`)
-1. **Panel A1** - Tally by number of cell types and GWAS associations
-2. **Panel A2** - Tally by number of cell types and eQTLGen MR results
-3. **Comparison plots** - TenK10K vs eQTLGen MR effects
-4. **Cell-type specificity** - Analysis of cell-type-specific causal effects
-
-### Supplementary Results (`mr_results_supp.R`)
-1. Extended statistical comparisons
-2. Additional visualization panels
-3. Detailed breakdowns by trait categories
-4. Quality control and sensitivity analyses
-
-## Output
-
-Generates:
-- **Figure 2** - Main MR overview figure for manuscript
-- **Supplementary figures** - Extended MR analyses
-- **Statistical summaries** - MR effect comparisons
-- **Cell-type specificity metrics** - Quantification of cell-type-specific effects
-
-## Usage
-
-Run the MR analysis scripts from the repository root:
-
-```bash
-# Main MR results and Figure 2
-Rscript scripts/2-mr/mr_results_main.R
-
-# Supplementary MR analyses
-Rscript scripts/2-mr/mr_results_supp.R
-```
-
-**Prerequisites:** 
-1. Complete the Snakemake workflow to generate mSMR results
-2. Run the preprocessing script (`0-preprocess/preprocess_results.R`)
-
-## Key Features
-
-- **Multi-dataset comparison** - TenK10K single-cell vs eQTLGen bulk
-- **Cell-type resolution** - Analysis at individual cell type level
-- **Effect size comparison** - Statistical comparison of MR effect sizes
-- **Visualization** - Comprehensive plots for manuscript figures
 
 ## Color Schemes
 
