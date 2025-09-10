@@ -1,6 +1,6 @@
 # 1-overview: Study Overview and Design
 
-This directory contains scripts for generating overview statistics and visualizations for the TenK10K causal inference study.
+This directory contains scripts for generating overview statistics and visualizations presented in the manuscript
 
 ## Overview
 
@@ -27,21 +27,6 @@ library(geomtextpath)   # Text along paths in ggplot2
 # data.table, tidyverse, arrow, fs, qvalue
 ```
 
-## Input Files
-
-The script sources `scripts/0-preprocess/preprocess_results.R`, which loads:
-- Preprocessed MAGMA and mSMR results
-- Cell type and trait mappings
-- Gene annotations
-
-## Output
-
-Generates:
-- Summary statistics for manuscript text
-- Overview figures for the study design
-- Gene count summaries by cell type and gene category (protein-coding vs non-coding)
-- Data characteristics tables
-
 ## Usage
 
 Run the overview script from the repository root:
@@ -49,24 +34,3 @@ Run the overview script from the repository root:
 ```bash
 Rscript scripts/1-overview/study_design.R
 ```
-
-**Prerequisites:** 
-1. Complete the Snakemake workflow to generate input data
-2. Run the preprocessing script (`0-preprocess/preprocess_results.R`)
-
-## Key Outputs
-
-The script categorizes genes into:
-- **Protein-coding genes** - Standard protein-coding loci
-- **Non-coding genes** - Non-protein-coding loci (e.g., lncRNA, miRNA)
-
-And provides counts across:
-- Individual cell types from TenK10K Phase 1
-- Major cell type categories
-- Overall gene universe used in the study
-
-## Figures Generated
-
-- Study design overview plots
-- Gene distribution visualizations by cell type
-- Summary statistics plots for data characteristics
